@@ -16,6 +16,12 @@
             <div class="card shadow border-0">
                 <div class="card-header bg-primary text-white">
                     <h5 class="mb-0"><i class="fas fa-plus-circle"></i> Nuevo Producto</h5>
+                    <?php if(isset($_GET['status']) && $_GET['status'] == 'deleted'): ?>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>¡Eliminado!</strong> El producto ha sido removido del inventario.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+<?php endif; ?>
                 </div>
                 <div class="card-body">
                     <form action="registrar.php" method="POST">
